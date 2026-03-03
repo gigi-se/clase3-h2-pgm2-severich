@@ -4,7 +4,8 @@
   <h2>Avatar</h2>
   <div class="mostrar-nombre">
   <p> Nombre: {{nombre()}} </p>
-</div>
+  </div>
+
   <div class="canvas-avatar">
     <div class="cuerpo"
          [style.background-color]="colorFondo()"
@@ -27,6 +28,7 @@
         </div>
     </div>
   </div>
+  
 <div class="controles">
   <label color>
      <input type="color" [value]="colorFondo()" (input)="cambiarColor($event)" >
@@ -44,11 +46,18 @@
     <button (click)="setExpresion(2)">sorprendido</button>
     <button (click)="setExpresion(3)">serio</button>
   </div>
+  
+<div class="girar">
+  <p> Girar </p>
+  <button (click)="girar()">Girar</button>
+  <button (click)="parar()">Parar</button>
+</div>
+
+
 </div >
+
 <div class="nombre">
 <p> Colocar nombre </p>
 <input type="text" [value]="nombre()" (input)="cambiarNombre($event)">
 </div>
 
-
-</div>

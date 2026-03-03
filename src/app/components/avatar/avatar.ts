@@ -13,8 +13,8 @@ export class AvatarComponent {
  tamano = signal<number>(150);
  tieneLentes = signal<boolean>(false);
  tipoExpresion = signal<number>(1);
- nombre = signal<string>('Avatar');
- 
+ nombre = signal<string>('');
+
   cambiarColor(event: Event){
     const input = event.target as HTMLInputElement;
     this.colorFondo.set(input.value);
@@ -34,5 +34,18 @@ export class AvatarComponent {
     const input = event.target as HTMLInputElement;
     this.nombre.set(input.value);
  }
-
+  
+  girar(){
+    const canvas = document.querySelector('.canvas-avatar') as HTMLElement;
+    if (canvas) {
+      canvas.classList.add('girando');
+    }
+  }
+  parar(){
+    const canvas = document.querySelector('.canvas-avatar') as HTMLElement;
+    if (canvas) {
+      canvas.classList.remove('girando');
+      canvas.style.transform = '';
+    }
+  }
 }
